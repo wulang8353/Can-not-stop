@@ -20,10 +20,17 @@ Html5、CSS3、jqeury、IconMoon
 
 4. 预计出现的问题
 
-## v0.1.0
 * 响应式布局：使用flex布局。
 * 冒泡：由点击事件产生的事件冒泡估计会很头疼
 
+5.知识点
 
+**首页**
+
+* CSS3
+```
+transform、transition、animation、box-sizing
+calc()：解决自适应布局中，百分比与确定值(px)计算的情况
+```
 
 
