@@ -1,30 +1,84 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <!-- 让搜索引擎知道，站点是中文站而不是'en'英文站，对html页面本身不会有影响 -->
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
-  <!--
+    <meta charset="UTF-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <!--
     http-equiv=X-UA-Compatible -> 针对IE8及以上版本的IE浏览器,其他浏览器会忽略
     content="IE=edge" -> 所有IE8及以上的浏览器按照自身最新版本渲染
     content="chrome=1" ->IE浏览器若安装了谷歌浏览器框架Google Chrome Frame（简称GCF）,那么就可以把IE浏览器渲染成跟chorme浏览器一样的效果
    -->
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-  <title>首页</title>
-  <link rel="stylesheet" type="text/css" href="css/reset.css" />
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
+
 <body>
-  <div class="wrapper">
-    <div class="container">
-      <div class="column">
-        <img src="images/headimg.jpg">
-        <div class="bg-word">
-          <h2>Hello,World</h2>
-          <p class="11">德玛西亚</p>
+    <!-- wrap start -->
+    <div class="wrap">
+        <div class="container">
+            <div class="column page1 on">
+                <img class="bg1" src="images/headimg.jpg">
+                <div class="mouse-tips down iconfont icon-down"></div>
+                <div class="bg-black">
+                    <div class="title title1">
+                        <h2>Hello,World</h2>
+                        <p>德玛西亚</p>
+                    </div>
+                </div>
+            </div>
+            <div class="column page2">
+                <h2 class="title title2">项目经验</h2>
+                <div class="content">
+                    <div class="project pro1">
+                        <div class="pro-img">
+                            <div class="iconfont icon-chengchangjingli"></div>
+                        </div>
+                        <div class="pro-txt">
+                            <h3>vue.js问卷管理单页应用(PC)</h3>
+                            <p>可以根据需求创建问卷，同样可以保存、填写问卷，问卷数据以图表统计的方式呈现出来。</p>
+                        </div>
+                        <div class="pro-btn">
+                            <a class="pro-link" href="http://win5do.cc/jianqn" target="_blank">LiveDemo</a>
+                            <a class="pro-link" href="https://github.com/win5do/IFE/tree/master/task50-vue-questionnaire#readme" target="_blank">项目心得</a>
+                        </div>
+                    </div>
+                    <div class="project pro2">
+                        <div class="pro-img">
+                            <div class="iconfont icon-chengchangjingli"></div>
+                        </div>
+                        <div class="pro-txt">
+                            <h3>基于jquery或zepto滚动插件</h3>
+                            <p>可用于fullpage页面和轮播，并且能够嵌套多个滚动框架，有竖直和横向滚动两种模式，可以自定义动画时间以及导航栏。</p>
+                        </div>
+                        <div class="pro-btn">
+                            <a class="pro-link" href="https://win5do.github.io/gun.js/" target="_blank">LiveDemo</a>
+                            <a class="pro-link" href="https://github.com/win5do/gun.js" target="_blank">项目心得</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+    <!-- wrap end -->
+
+
+    <div class="nav-right">
+      <ul>
+        <li class="item iconfont icon-homepage on"><span>首页</span></li>
+        <li class="item iconfont icon-xiangmu"><span>项目</span></li>
+        <li class="item iconfont icon-skill"><span>技能</span></li>
+        <li class="item iconfont icon-chengchangjingli"><span>经历</span></li>
+        <li class="item iconfont icon-lianxi"><span>联系</span></li>
+        <li class="item iconfont icon-editor"><span>信息</span></li>
+       </ul>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
+
 </html>

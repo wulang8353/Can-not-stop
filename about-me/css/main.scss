@@ -1,37 +1,263 @@
-// reset
-body,
-div,
-h1,
-h2,
-h3,
-h4,
-h5,
-form,
-input,
-img,
-ul,
-ol,
-li,
-dl,
-dt,
-dd,
-p {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: 0;
+@charset "utf-8"; // 解决ruby环境Sass编译中文出现的语法错误
+html,
+body {
+    color: #333;
+    font: 400 14px/1.5 Microsoft YaHei, sans-serif;
 }
 
-li {
-    list-style: none;
+// iconfont.css
+@font-face {
+    font-family: "iconfont";
+    src: url('../fonts/iconfont.eot?t=1493713540207');
+    /* IE9*/
+    src: url('../fonts/iconfont.eot?t=1493713540207#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../fonts/iconfont.woff?t=1493713540207') format('woff'), /* chrome, firefox */
+    url('../fonts/iconfont.ttf?t=1493713540207') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../fonts/iconfont.svg?t=1493713540207#iconfont') format('svg');
+    /* iOS 4.1- */
 }
 
-a {
-    text-decoration: none;
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-p {
-    color: red;
-    font-size: 20px;
-    font-weight: 300
+.icon-chengchangjingli:before {
+    content: "\e6dc";
+}
+
+.icon-lianxi:before {
+    content: "\e605";
+}
+
+.icon-xiangmu:before {
+    content: "\e61b";
+}
+
+.icon-skill:before {
+    content: "\e607";
+}
+
+.icon-down:before {
+    content: "\e6ad";
+}
+
+.icon-shixijingli:before {
+    content: "\e61d";
+}
+
+.icon-add:before {
+    content: "\e6df";
+}
+
+.icon-addressbook_fill:before {
+    content: "\e6e2";
+}
+
+.icon-close:before {
+    content: "\e6e9";
+}
+
+.icon-editor:before {
+    content: "\e6f5";
+}
+
+.icon-enter:before {
+    content: "\e6f8";
+}
+
+.icon-homepage:before {
+    content: "\e702";
+}
+
+.icon-interactive:before {
+    content: "\e704";
+}
+
+.icon-like_fill:before {
+    content: "\e707";
+}
+
+.icon-like:before {
+    content: "\e708";
+}
+
+.icon-return:before {
+    content: "\e720";
+}
+
+.icon-right:before {
+    content: "\e721";
+}
+
+// 复用代码块
+@mixin basic($w:100%,
+$h:100%) {
+    width: $w;
+    height: $h;
+}
+
+@mixin clearfix {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+// 首页
+.wrap,
+.container,
+.colum {
+    @include basic;
+}
+
+.wrap {
+    overflow: hidden;
+}
+
+.container {
+    transition: all .5s ease;
+}
+
+.column {
+    overflow: hidden;
+    position: relative;
+}
+
+.title {
+    font-size: 30px;
+}
+
+// 向下箭头跳动
+.mouse-tips {
+    @keyframes UpDown1 {
+        0% {
+            transform: translate(0, 0);
+        }
+        100% {
+            transform: translate(0, -80%);
+        }
+    }
+    @keyframes UpDown2 {
+        0% {
+            transform: translate(0, 0) rotate(180deg);
+        }
+        100% {
+            transform: translate(0, -80%) rotate(180deg);
+        }
+    }
+    position: absolute;
+    @include basic(50px,50px);
+    left: calc(50% - 25px);
+    bottom: 20px;
+    color: #fff;
+    font-size: 50px;
+    animation: UpDown1 .5s ease-in-out infinite alternate both;
+/*  &.up {
+  bottom: 50px;
+  animation-name: UpDown2
+} */
+}
+
+// 主屏
+.page1 {
+    text-align: center;
+    .bg1 {
+        display: block;
+        @include basic;
+    }
+    .bg-black {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(0, 0, 0, 0.25);
+        @include basic;
+    }
+    .title1 {
+        position: absolute;
+        left: 0;
+        top: 250px;
+        @include basic(100%,
+        150px);
+        color: #fff;
+        >h2 {
+            font-size: 40px;
+        }
+    }
+}
+
+// 项目经验
+.page2 {
+    text-align: center;
+    .title2 {
+        margin: 20px 0;
+    }
+    .content {
+        width: 940px;
+        margin: 0 auto;
+    }
+    .project {
+        display: table;
+        box-sizing: box-sizing;
+        @include basic(450px,
+        100px);
+        background: #fff;
+        border: 1px solid #eee;
+        box-shadow: 1px 3px 3px 0 #b9b9b9;
+        border-radius: 2px;
+        opacity: 1;
+        cursor: pointer;
+        padding: 5px;
+        .pro-img {
+            display: table-cell;
+            vertical-align: middle;
+            >.iconfont {
+                @include basic(80px,
+                80px);
+                border-radius: 100px;
+                background-color: #666;
+                font-size: 50px;
+                color: #fff;
+            }
+        }
+        .pro-txt {
+            display: table-cell;
+            text-align: left;
+            padding: 0 10px;
+            >h3 {
+                font-size: 14px;
+                margin-bottom: 5px;
+            }
+            >p {
+                font-size: 15px;
+            }
+        }
+        .pro-btn {
+            display: table-cell;
+            vertical-align: middle;
+            .pro-link {
+                display: block;
+                padding: 5px 10px;
+                margin: 8px 0;
+                color: #fff;
+                background-color: #ef4d4d;
+                border-radius: 4px;
+                box-shadow: 0 3px 0 0 #ab3434;
+            }
+        }
+        @for $i from 1 through 2 {
+            &.pro#{$i} {
+                @if $i%2==1 {
+                    float: left;
+                    margin-right: 50%;
+                }
+                @else {
+                    float: right;
+                    margin-left: 50px;
+                }
+            }
+        }
+    }
 }
