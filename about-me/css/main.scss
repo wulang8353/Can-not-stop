@@ -155,10 +155,10 @@ $h:100%) {
     color: #fff;
     font-size: 50px;
     animation: UpDown1 .5s ease-in-out infinite alternate both;
-/*  &.up {
-  bottom: 50px;
-  animation-name: UpDown2
-} */
+    &.up {
+        bottom: 50px;
+        animation-name: UpDown2
+    }
 }
 
 // 主屏
@@ -260,4 +260,50 @@ $h:100%) {
             }
         }
     }
+}
+
+.nav-right {
+  $long: 348px;
+  height: $long;
+  position: fixed;
+  right: 3%;
+  top: 50%;
+  margin-top: -$long/2; // 垂直居中得减去自身高度的一半
+  .item {
+    position: relative;
+    font-size: 30px;
+    @include basic(50px, 50px);
+    margin: 10px 0;
+    background: #fe2f62;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    transition: all .8s ease;
+    white-space: nowrap;
+    >span {
+      display: none;
+      font-size: 16px;
+      position: absolute;
+      left: -50px;
+      top: 13px;
+      color: #000;
+    }
+    &.on {
+      background-color: #fec02d;
+      transform: scale(1.3);
+      margin:20px 0;
+    }
+    @media (min-width: 769px) {
+      &:hover {
+        background-color: #fec02d;
+        color: #000;
+        transform: scale(1.3);
+        margin: 20px 0;
+        >span {
+            display: block;
+        }
+      }
+    }
+  }
 }
