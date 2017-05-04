@@ -130,6 +130,11 @@ $h:100%) {
     font-size: 30px;
 }
 
+.page2,
+.page4 {
+    background: #e8e8e8;
+}
+
 // 向下箭头跳动
 .mouse-tips {
     @keyframes UpDown1 {
@@ -287,7 +292,7 @@ $h:100%) {
       position: absolute;
       left: -50px;
       top: 13px;
-      color: #000;
+      color: #fff;
     }
     &.on {
       background-color: #fec02d;

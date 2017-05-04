@@ -32,5 +32,9 @@ Html5、CSS3、jqeury、IconMoon
 transform、transition、animation、box-sizing
 calc()：解决自适应布局中，百分比与确定值(px)计算的情况
 ```
+* JS
+```
+mousewheel、DOMMouseScroll
+```
 
 
