@@ -166,6 +166,51 @@ $h:100%) {
     }
 }
 
+//加上.on的动画
+.on {
+    //右侧滑出动画
+    @keyframes fadeInRight {
+      0% {
+          opacity: 0;
+          transform: translate(100%, 0)
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+    //左侧滑出动画
+    @keyframes fadeInLeft {
+      0% {
+          opacity: 0;
+          transform: translate(-100%, 0)
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+    //淡出动画
+    @keyframes fadeIn {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+    }
+    //二屏
+    .pro2{
+        animation: fadeInRight .8s ease both;
+    }
+    .pro1{
+        animation: fadeInLeft .8s ease both;
+    }
+    @for $i from 1 through 2 {
+        .pro#{$i} {
+            animation-delay: .2s * ($i - 1);
+        }
+    }
+}
+
 // 主屏
 .page1 {
     text-align: center;
