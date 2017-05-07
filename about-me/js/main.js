@@ -29,47 +29,51 @@ var doFn = {
 
         // 通过onIndex的值来设置container的margin-top值，并给当前的附上class——on
         function setMtAndOn() {
-          function currentOn(className) {
-            $(className).remove('on');
-            $(className).eq(onIndex).addClass('on');
-          }
 
-          var clientH = $(window).height();
-          mt = -clientH * onIndex;
-          $('.container').css({
-            'transform': 'translateY(' + mt + 'px)'
-          });
-          setTimeout(function(){
-            currentOn('.column');
-            currentOn('.item');
-          }, 400);
-        }
+            // 给当前所在屏加上class——on，适用于column和nav-right
+            function currentOn(className) {
+                $(className).removeClass('on');
+                $(className).eq(onIndex).addClass('on');
+            }
+
+            var clientH = $(window).height();
+            mt = -clientH * onIndex;
+            $('.container').css({
+                'transform': 'translateY(' + mt + 'px)'
+            });
+            setTimeout(function () {
+                currentOn('.column');
+                currentOn('.item');
+            }, 400);
+        };
 
         function whenIndexChange() {
             //  onIndex改变时的逻辑
-
+            // console.log("onIndex逻辑触发")
             setMtAndOn();
-            // info控制 在第五屏定时弹出 不在隐藏 在第一屏显示个按钮
+
         }
 
+        // 绑定滚轮事件，确定向上滚动还是向下滚动
         (function pageScroll() {
             //  给document绑定鼠标滚轮事件、键盘事件、鼠标移动事件
-            $(document).on('mousewheel keydown DOMMouseScroll',
-                function(event) {
+            $(document).on('mousewheel keydown DOMMouseScroll',function(event) {
 
+            				event = window.event || event;
+            				console.log(event)
                     if (preventCombo()) {
                         return;
                     };
+                    // console.log("滑动开始")
 
-                    event = event || window.event;
-                    // 给document绑定鼠标滚轮事件、键盘事件、鼠标移动事件
                     // keyCode = 38 | 40   -> 上箭头、下箭头
                     var wheel = event.wheelDelta || -event.detail;
+                    console.log(event.wheelDelta)
                     if (wheel < 0 || event.keyCode == 40) {
                         if (onIndex <= 3) {
                             onIndex++;
                         }
-                    } else if (wheel > 0 || event.detail == 38) {
+                    } else if (wheel > 0 || event.keyCode == 38) {
                         if (onIndex >= 1) {
                             onIndex--;
                         }
@@ -78,6 +82,8 @@ var doFn = {
                     whenIndexChange();
                 })
         })();
+
+        
     }
 }
 
