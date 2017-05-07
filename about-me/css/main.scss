@@ -349,6 +349,36 @@ body {
                 transform: rotateY(180deg);
             }
         }
+        .skill-title {
+            font-size: 18px;
+            @include basic(100px,
+            40px);
+            margin: 10px auto;
+            border-bottom: 3px solid red;
+        }
+        .skill-point {
+            font-size: 16px;
+            display: inline-block;
+            margin: 5px 20px;
+            padding: 5px 10px;
+            background: rgba(255, 154, 0, 0.4);
+            border-radius: 8px;
+        }
+        .backface {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include basic;
+            padding: 15px;
+            text-indent: 2em;
+            text-align: justify;
+            box-sizing: border-box;
+            font-size: 14px;
+            transform: rotateY(180deg) translateZ(1px);
+            backface-visibility: hidden;
+            overflow: hidden;
+            background: #efefef;
+        }
     }
 }
 
@@ -389,5 +419,27 @@ body {
     }
     .pro1 {
         animation: fadeInLeft .8s ease both;
+    }
+    @for $i from 1 through 2 {
+        .pro#{$i} {
+            animation-delay: .2s * ($i - 1);
+        }
+    }
+    //ÈýÆÁskill
+    @keyframes rotate360 {
+        0% {
+            transform: rotateY(-360deg);
+        }
+        100% {
+        	
+        }
+    }
+    .skill {
+        animation: rotate360 1.2s ease;
+    }
+    @for $i from 1 through 6 {
+        .skill#{$i} {
+            animation-delay: 0.2s * ($i - 1);
+        }
     }
 }
