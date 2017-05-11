@@ -133,6 +133,11 @@ body {
     background: #e8e8e8;
 }
 
+.page3,
+.page5 {
+    background: #bbb;
+}
+
 .title {
     font-size: 30px;
 }
@@ -382,6 +387,180 @@ body {
     }
 }
 
+// 四屏
+.page4 {
+    text-align: center;
+    .title4 {
+        margin-top: 60px;
+    }
+    .content {
+        @include basic(650px,
+        300px);
+        margin: 100px auto 0;
+    }
+    .history {
+        float: left;
+        @include basic(50px,
+        100%);
+        margin: 0 2px;
+        background: #fff;
+        border: 1px solid #eee;
+        border-radius: 2px;
+        box-shadow: 1px 3px 3px 0 #b9b9b9;
+        overflow: hidden;
+        position: relative;
+        transition: all .8s ease;
+        &.cur {
+            width: 500px;
+        }
+        .year {
+            position: absolute;
+            left: 0;
+            top: 0;
+            @include basic(50px,
+            100%);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 30px 0 0 15px;
+            font-size: 18px;
+            font-weight: 700;
+            word-wrap: break-word;
+            letter-spacing: 20px;
+        }
+        .intro {
+            position: absolute;
+            left: 50px;
+            top: 0;
+            @include basic(450px,
+            100%);
+            box-sizing: border-box;
+            padding: 30px;
+            line-height: 2;
+            text-align: left;
+            word-break: break-all;
+            .company {
+                font-weight: 600;
+                font-size: 15px;
+            }
+            >.job {
+                margin-bottom: 5px;
+            }
+            >dd {
+                display: list-item;
+                list-style-type: circle;
+            }
+        }
+    }
+}
+
+// 五屏
+.page5 {
+    text-align: center;
+    .content {
+        margin: 180px 0 0;
+        .end {
+            opacity: 0;
+            font-size: 30px;
+            font-weight: 500;
+            margin: 10px 0;
+            > a {
+                color: #333;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+.inverse {
+    transform: rotateY(180deg);
+}
+
+
+//  info
+.info {
+    $newsH: 590px;
+    width: 350px;
+    height: $newsH;
+    margin-top: -$newsH/2;
+    position: fixed;
+    // left: -350px;
+    top: 50%;
+    color: #fff;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 0 4px 4px 0;
+    transition: all .3s ease;
+}
+
+//个人信息呼出按钮
+.info-tg {
+    $newsBtnH: 60px;
+    width: 40px;
+    height: $newsBtnH;
+    position: absolute;
+    right: -40px;
+    top: 50%;
+    margin-top: -$newsBtnH/2;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    text-align: center;
+    .info-arrow {
+        height: 100%;
+        color: #fff;
+        font-size: 40px;
+    }
+}
+
+.info-box {
+    padding: 15px 50px;
+    .avatar {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        // border-radius: 50%;
+        // border: 2px solid #fff;
+        // overflow: hidden;
+        //通过控制父元素的弧度+overflow，可以将正方式图片变换圆
+        >img {
+            display: block;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .info-li {
+        padding: 0 10px 10px;
+        border-bottom: 1px dashed #fff;
+        margin-bottom: 15px;
+        &:last-child {
+            border: none;
+        }
+        >h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        >p {
+            font-size: 16px;
+        }
+    }
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    color: #888;
+    left: 0;
+    bottom: 0;
+    background: #444;
+    font-size: 12px;
+    >a {
+        color: #888;
+    }
+}
+
 // .on
 .on {
     // 右侧滑出动画
@@ -430,9 +609,7 @@ body {
         0% {
             transform: rotateY(-360deg);
         }
-        100% {
-        	
-        }
+        100% {}
     }
     .skill {
         animation: rotate360 1.2s ease;
@@ -442,4 +619,46 @@ body {
             animation-delay: 0.2s * ($i - 1);
         }
     }
+    // 五屏
+    @keyframes fadeInUpBig {
+        0% {
+            opacity: 0;
+            -webkit-transform: translate3d(0, 2000px, 0);
+            transform: translate3d(0, 2000px, 0);
+        }
+        100% {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+    .end {
+        animation: fadeInUpBig 1s ease both;
+    }
+    @for $i from 1 through 6 {
+        .end#{$i} {
+            animation-delay: .5s * ($i - 1);
+        }
+    }
+}
+
+// z-index属性汇总
+// 跳动的鼠标提示
+.mouse-tips {
+    z-index: 97;
+}
+
+// 右侧导航按钮
+.nav-right {
+    z-index: 100;
+}
+
+// 左侧新闻层
+.info {
+    z-index: 110;
+}
+
+// 第五屏页脚
+.footer {
+    z-index: 96;
 }

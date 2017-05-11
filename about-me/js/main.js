@@ -41,7 +41,7 @@ var doFn = {
             $('.container').css({
                 'transform': 'translateY(' + mt + 'px)'
             });
-            setTimeout(function () {
+            setTimeout(function() {
                 currentOn('.column');
                 currentOn('.item');
             }, 400);
@@ -50,40 +50,72 @@ var doFn = {
         function whenIndexChange() {
             //  onIndex改变时的逻辑
             // console.log("onIndex逻辑触发")
-            setMtAndOn();
+            setMtAndOn(); 
+
+
+            // 第四屏幕-先动画再绑定事件 
+            if (onIndex === 3) {
+                if (!p4Animate) {
+                    return;
+                }
+
+                clearTimeout(p4Timer);
+                p4Animate = false;
+                $('.history').removeClass('cur');
+                $('.history').eq(0).addClass('cur');
+                p4Timer = setTimeout(function() {
+                    $('.history').removeClass('cur');
+                    $('.history').eq(1).addClass('cur');
+                }, 1000);
+                p4Timer = setTimeout(function() {
+                    $('.history').removeClass('cur');
+                    $('.history').eq(2).addClass('cur');
+                }, 2000);
+                p4Timer = setTimeout(function() {
+                    $('.history').on('mouseover', function() {
+                        if ($(this).attr('class').indexOf('cur') < 0) {
+                            $('.history').removeClass('cur');
+                            $(this).addClass('cur');
+                        }
+                    });
+                }, 3000);
+            } else {
+                p4Animate = true;
+                $('.history').off('mouseover');
+                $('.history').removeClass('cur').eq(-1).addClass('cur');
+            }
 
         }
 
         // 绑定滚轮事件，确定向上滚动还是向下滚动
         (function pageScroll() {
             //  给document绑定鼠标滚轮事件、键盘事件、鼠标移动事件
-            $(document).on('mousewheel keydown DOMMouseScroll',function(event) {
+            $(document).on('mousewheel keydown DOMMouseScroll', function(event) {
 
-            				event = window.event || event;
-            				console.log(event)
-                    if (preventCombo()) {
-                        return;
-                    };
-                    // console.log("滑动开始")
+                event = window.event || event;
+                if (preventCombo()) {
+                    return;
+                };
+                // console.log("滑动开始")
 
-                    // keyCode = 38 | 40   -> 上箭头、下箭头
-                    var wheel = event.wheelDelta || -event.detail;
-                    console.log(event.wheelDelta)
-                    if (wheel < 0 || event.keyCode == 40) {
-                        if (onIndex <= 3) {
-                            onIndex++;
-                        }
-                    } else if (wheel > 0 || event.keyCode == 38) {
-                        if (onIndex >= 1) {
-                            onIndex--;
-                        }
+                // keyCode = 38 | 40   -> 上箭头、下箭头
+                var wheel = event.wheelDelta || -event.detail;
+                // console.log(event.wheelDelta)
+                if (wheel < 0 || event.keyCode == 40) {
+                    if (onIndex <= 3) {
+                        onIndex++;
                     }
+                } else if (wheel > 0 || event.keyCode == 38) {
+                    if (onIndex >= 1) {
+                        onIndex--;
+                    }
+                }
 
-                    whenIndexChange();
-                })
+                whenIndexChange();
+            })
         })();
 
-        
+
     }
 }
 
