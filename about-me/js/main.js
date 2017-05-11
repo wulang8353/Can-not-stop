@@ -38,6 +38,7 @@ var doFn = {
 
             var clientH = $(window).height();
             mt = -clientH * onIndex;
+            // 通过滑动滑轮，进入触发transition
             $('.container').css({
                 'transform': 'translateY(' + mt + 'px)'
             });
@@ -47,10 +48,70 @@ var doFn = {
             }, 400);
         };
 
+
+        $('.info-tg, .info-tg2').on('click', function(event) {
+            event.stopPropagation();
+            event.preventDefault();
+
+            if (infoOut === 2) {
+                infoOut = 1;
+            } else {
+                infoOut = 2;
+            }
+
+            infoToggle();
+        })
+
+        $(window).resize(function () {
+        	setMtAndOn();
+        })
+
+        function infoToggle() {
+            var infoW = $('.info').width();
+
+            switch (infoOut) {
+                case 2:
+		                $('.info').show().css({
+		                    'left': 0
+		                });
+		                $('.info-arrow').addClass('inverse');
+		                break;
+                case 1:
+		                $('.info').css({
+		                    'left': -infoW
+		                });
+		                $('.info-arrow').removeClass('inverse');
+		                break;
+                default:
+                    $('.info').css({
+                        'left': '-100%'
+                    });
+                    $('.info-arrow').removeClass('inverse');
+                    break;
+            }
+        }
+
         function whenIndexChange() {
             //  onIndex改变时的逻辑
             // console.log("onIndex逻辑触发")
-            setMtAndOn(); 
+            setMtAndOn();
+            // info 在第五屏幕自动弹出
+            clearTimeout(infoTimer);
+            switch (onIndex) {
+            	case 0:
+            			infoOut = 1;
+            			break;
+            	case 4:
+            			infoTimer = setTimeout(function () {
+            				infoOut =2;
+            				infoToggle();
+            			}, 4000);
+            			break;
+            	default:
+            			infoOut = 0;
+            			break;
+            }
+            infoToggle();
 
 
             // 第四屏幕-先动画再绑定事件 
@@ -115,6 +176,15 @@ var doFn = {
             })
         })();
 
+        $('.nav-right').find('.item').each(function (index) {
+        	 if (index !== 5) {
+        	 	$(this).click(function (event) {
+        	 			event.stopPropagation();
+        	 			onIndex = index;
+        	 			whenIndexChange();
+        	 	})
+        	 }
+        });
 
     }
 }
