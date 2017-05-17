@@ -17,20 +17,13 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video, input {
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-weight: normal;
-    vertical-align: baseline;
+    border: border: none;
 }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, menu, nav, section {
     display: block;
-}
-
-body {
-    line-height: 1;
 }
 
 blockquote, q {
@@ -78,10 +71,6 @@ li {
     width: 5px;
     background-color: rgba(125, 125, 125, 0.7);
     -webkit-border-radius: 6px;
-}
-
-html, body {
-    width: 100%;
 }
 
 body {

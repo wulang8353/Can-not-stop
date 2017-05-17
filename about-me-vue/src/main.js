@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource';
+import axios from 'axios';
 import App from './App';
 
-Vue.config.productionTip = false;
+import 'common/style/index.scss';
 
 /* eslint-disable no-new */
 new Vue({

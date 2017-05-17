@@ -1,15 +1,15 @@
 <template>
   <div id="app">
-    <hello></hello>
+    <v-sideBar></v-sideBar>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello';
+import sidebar from './components/sidebar/sideBar.vue';
 
 export default {
   components: {
-    Hello
+    'v-sideBar': sidebar
   }
 };
 </script>
