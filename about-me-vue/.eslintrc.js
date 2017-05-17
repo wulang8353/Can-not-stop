@@ -22,6 +22,20 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 0,
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    // js一直有分号
+    'semi': ['error','always'],
+    // 允许有连续空行，最大不超过2行
+    'no-multiple-empty-lines': ['error', {
+      max: 3,
+      maxEOF: 3,
+      maxBOF: 3
+    }],
+    // 缩进不需要使用默认
+    'indent': 0,
+    // 函数名和括号之间不需要有空格
+    'space-before-function-paren': 0,
+    // 允许有未被使用的变量
+    'no-unused-vars':0
   }
 }
