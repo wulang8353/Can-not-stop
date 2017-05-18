@@ -23,35 +23,25 @@
       </ul>
     </div>
     <!-- 路由出口 -->
-    <div class="wrap">
-      <div class="container">
-          <router-view></router-view>
-      </div>
-    </div>
+    <router-view></router-view>
+    <!-- keep-alive 状态保留，生命周期不会重新加载 -->
   </div>
 </template>
 <script>
-export default {
 
+const CURRENT = 0;
+export default {
+  
 };
 </script>
 <style lang="scss" scoped>
 @import 'common/style/mixin.scss';
-
-// 外层父容器样式
-.wrap,
-.container {
+// 通过给父元素设定高度缺省值，其子元素就能达到撑满页面的效果
+#app {
   @include wh;
 }
-// 不会出现右侧滚动框
-.wrap {
-  overflow: hidden;
-}
-.container {
-  transition: all 0.5s ease;
-}
-// 整个导航栏高度
-$nrH: 348px; 
+
+$nrH: 348px;
 .nav-right {
   z-index: 50;
   height: $nrH;

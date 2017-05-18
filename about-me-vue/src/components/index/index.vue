@@ -1,11 +1,11 @@
 <template>
-  <div class="column page1 on">
-    <img class="bg1" :src="img" height="1080" width="1920"></img>
+  <div class="page1 on">
+    <img class="bg1" :src="img"></img>
     <div class="mouse-tips"></div>
     <div class="bg-black">
       <div class="title1">
         <h2>Walter</h2>
-        <p>读书是为了心平气和的跟傻逼说话，健身是为了傻逼心平气和地跟我说话</p>
+        <p><span>读书</span>是为了心平气和地跟傻逼说话，<span>健身</span>是为了傻逼心平气和地跟我说话</p>
       </div>
     </div>
   </div>
@@ -21,14 +21,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '../../common/style/mixin.scss';
-.column {
+.page1 {
+  text-align: center;
   overflow: hidden;
   position: relative;
   @include wh;
-}
-
-.page1 {
-  text-align: center;
+  transition: all 0.5s ease;
   .bg1 {
     display: block;
     @include wh;
