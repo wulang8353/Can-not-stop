@@ -1,0 +1,108 @@
+{
+  "head":{
+    "name":"吴浪",
+    "nickname": "Walter",
+    "intention":"前端开发",
+    "tel":"15712345678",
+    "email":"zengtianshengz@163.com",
+    "address":"杭州余杭",
+    "age":"1992.9.25",
+    "sex":"男",
+    "school":"华侨大学厦门工学院",
+    "graduation":"本科",
+    "graduationTime":"2012-9-1 至 2016-7-1",
+    "major":"电子信息工程及自动化",
+    "saying":"读书是为了心平气和地跟傻逼说话，健身是为了傻逼心平气和地跟我说话",
+    "interest":"骑行、游泳、编程、音乐、攀岩",
+    "speciality":"js、css、html",
+    "specialityPer":"40、50、60"
+
+  },
+  "blogLink":{
+    "github":"https://github.com/ZengTianShengZ",
+    "blog":"https://segmentfault.com/u/zss"
+  },
+  "workExperience":{
+    "time":"2016-10 至 今",
+    "experience":[
+      {
+        "name":"网页游戏bong精灵",
+        "skill":"gulp+scss+zepto",
+        "time":"",
+        "describe":[
+          "bong精灵可以根据用户消耗的卡路里换取食物进行喂养,有食物商店,宠物商店,宠物PK,精灵分享等",
+          "使用gulp构建项目,实现浏览器热刷新,js、css压缩合并,图片压缩处理等项目自动打包处理",
+          "使用flexible.js实现移动端屏幕适配问题"
+        ]
+      },
+      {
+        "name":"微信公众号活动页",
+        "skill":"vue.js+vue-route+nodeJs",
+        "time":"",
+        "describe":[
+          "基于微信公众号的网页活动,实现用户活动分享,用户活动查看好友记录等",
+          "使用vue框架完成项目前端开发,使用nodeJs完成项目后端开发",
+          "项目服务器部署,项目后期维护和运维"
+        ]
+      }
+    ]
+  },
+  "projectExperience":{
+    "time":"",
+    "experience":[
+      {
+        "name":"基于Vue饿了么外卖app",
+        "skill":"vue-router+vue-resource+better-scroll",
+        "time":"2017.3",
+        "logo": "icon-chengchangjingli",
+        "describe":
+          "网页上使用鼠标进行拖拽，进行实物选择、添加购物车、结算等功能"
+        ,
+        "address": "https://github.com/wulang8353/vue2",
+        "summary": "https://github.com/wulang8353/vue2/blob/master/README.md"
+      },
+      {
+        "name":"基于NodeJs搭建博客",
+        "skill":"Node+Express+Mongodb",
+        "time":"2017.4",
+        "logo": "icon-xiangmu",
+        "describe":
+          "基于NodeJs构建数据库，实现前后可以交互的博客功能"
+        ,
+        "address": "https://github.com/wulang8353/Node-Blog",
+        "summary": "https://github.com/wulang8353/Node-Blog/blob/master/README.md"
+      }
+    ]
+  },
+  "skill":[
+    {
+      "type":"构建工具",
+      "describe":[
+        "熟练使用gulp,webpack构建项目"
+      ]
+    },
+    {
+      "type":"框架",
+      "describe":[
+        "熟悉 jQuery,Bootstrap",
+        "熟练使用vue完成复杂交互的开发",
+        "了解react"
+      ]
+    },
+    {
+      "type":"-",
+      "describe":[
+        "熟悉 js,能使用原生js完成一般项目的开发",
+        "熟悉css,scss,以及css3的以下新特性",
+        "熟悉 html5,能写出语义化网页",
+        "熟悉网页优化",
+        "了解网络安全,懂得项目运维"
+      ]
+    }
+  ],
+  "selfAssessment":[
+    "   鲁迅先生曾说过:世上本没有路,走的人多了便成了路",
+    "每错,点击左上角,欢迎 star "
+  ]
+
+}

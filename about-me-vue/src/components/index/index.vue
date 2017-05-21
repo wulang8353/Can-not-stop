@@ -3,19 +3,26 @@
     <img class="bg1" :src="img"></img>
     <div class="mouse-tips"></div>
     <div class="bg-black">
-      <div class="title1">
-        <h2>Walter</h2>
-        <p><span>读书</span>是为了心平气和地跟傻逼说话，<span>健身</span>是为了傻逼心平气和地跟我说话</p>
+      <div class="title1" >
+        <h2 class="name">{{head.nickname}}</h2>
+        <p>{{head.saying}}</p>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  props: {
+    head: {
+      type: Object
+    }
+  },
   data() {
     return {
       img: require('./head.png')
     };
+  },
+  methods: {
   }
 };
 </script>

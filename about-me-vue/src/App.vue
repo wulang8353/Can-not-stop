@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" ref="doc">
     <div class="nav-right">
       <ul>
         <router-link to="/index">
@@ -23,15 +23,33 @@
       </ul>
     </div>
     <!-- 路由出口 -->
-    <router-view></router-view>
+    <router-view :head="head"></router-view>
     <!-- keep-alive 状态保留，生命周期不会重新加载 -->
   </div>
 </template>
 <script>
+import axios from 'axios';
 
-const CURRENT = 0;
+const onIndex = 0;
+const ERR_OK = 0;
 export default {
-  
+  data() {
+      return {
+        head: []
+      };
+    },
+    created() {
+      axios.get('./api/head').then((res) => {
+          var response = res.data;
+          if (response.errno === ERR_OK) {
+            this.head = response.data;
+            console.log(this.head);
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
 };
 </script>
 <style lang="scss" scoped>

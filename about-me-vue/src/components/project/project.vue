@@ -2,30 +2,18 @@
   <div class="page2">
     <h2 class="title2">项目经验</h2>
     <div class="content">
-      <div class="project pro1">
+      <div class="project" :class="'pro'+(index+1)" v-for="(item,index) in project.experience">
         <div class="pro-img">
-          <div class="iconfont icon-chengchangjingli"></div>
+          <div class="iconfont" :class="item.logo"></div>
         </div>
         <div class="pro-txt">
-          <h3>vue.js问卷管理单页应用(PC)</h3>
-          <p>可以根据需求创建问卷，同样可以保存、填写问卷，问卷数据以图表统计的方式呈现出来。</p>
+          <h3>{{item.name}}</h3>
+          <p>{{item.describe}}</p>
+          <p>{{item.skill}}</p>
         </div>
         <div class="pro-btn">
-          <a class="pro-link" href="http://win5do.cc/jianqn" target="_blank">LiveDemo</a>
-          <a class="pro-link" href="https://github.com/win5do/IFE/tree/master/task50-vue-questionnaire#readme" target="_blank">项目心得</a>
-        </div>
-      </div>
-      <div class="project pro2">
-        <div class="pro-img">
-          <div class="iconfont icon-chengchangjingli"></div>
-        </div>
-        <div class="pro-txt">
-          <h3>基于jquery或zepto滚动插件</h3>
-          <p>可用于fullpage页面和轮播，并且能够嵌套多个滚动框架，有竖直和横向滚动两种模式，可以自定义动画时间以及导航栏。</p>
-        </div>
-        <div class="pro-btn">
-          <a class="pro-link" href="https://win5do.github.io/gun.js/" target="_blank">LiveDemo</a>
-          <a class="pro-link" href="https://github.com/win5do/gun.js" target="_blank">项目心得</a>
+          <a :href="item.address" class="pro-link" target="_blank">LiveDemo</a>
+          <a :href="item.summary" class="pro-link" target="_blank">项目心得</a>
         </div>
       </div>
     </div>
@@ -110,11 +98,26 @@
 }
 </style>
 <script>
+import axios from 'axios';
+
+const ERR_OK = 0;
 export default {
   data() {
     return {
-
+      project: []
     };
+  },
+  created() {
+    axios.get('./api/project').then((res) => {
+      var response = res.data;
+      if (response.errno === ERR_OK) {
+        this.project = response.data;
+        console.log(this.project);
+      }
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
   }
 };
 </script>

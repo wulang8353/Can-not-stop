@@ -2,6 +2,7 @@ var path = require('path')
 var utils = require('./utils')
 var config = require('../config')
 var vueLoaderConfig = require('./vue-loader.conf')
+var webpack = require("webpack")
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -26,6 +27,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js',
       'common': path.resolve(__dirname, '../src/common'),
       'components': path.resolve(__dirname, '../src/components'),
+      'jquery': path.resolve(__dirname, '../node_modules/jquery/src/jquery'),
       '@': resolve('src')
     }
   },
@@ -67,5 +69,5 @@ module.exports = {
         }
       }
     ]
-  }
+  } 
 }
