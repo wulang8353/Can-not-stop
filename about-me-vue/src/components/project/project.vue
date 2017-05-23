@@ -2,7 +2,7 @@
   <div class="page2">
     <h2 class="title2">项目经验</h2>
     <div class="content">
-      <div class="project" :class="'pro'+(index+1)" v-for="(item,index) in project.experience">
+      <div class="project animated " :class="'pro'+(index+1)" v-for="(item,index) in project.experience">
         <div class="pro-img">
           <div class="iconfont" :class="item.logo"></div>
         </div>
@@ -22,11 +22,11 @@
 <style lang="scss" scoped>
 @import '../../common/style/mixin.scss';
 .page2 {
+  @include wh;
   overflow: hidden;
   position: relative;
   background: #e8e8e8;
   text-align: center;
-  @include wh;
   .title2 {
     font-size: 30px;
     margin: 20px 0;
@@ -84,7 +84,7 @@
     }
     @for $i from 1 through 2 {
       &.pro#{$i} {
-        @if $i%2 == 1 {
+        @if $i%2==1 {
           float: left;
           margin-right: 50%;
         }
@@ -103,21 +103,21 @@ import axios from 'axios';
 const ERR_OK = 0;
 export default {
   data() {
-    return {
-      project: []
-    };
-  },
-  created() {
-    axios.get('./api/project').then((res) => {
-      var response = res.data;
-      if (response.errno === ERR_OK) {
-        this.project = response.data;
-        console.log(this.project);
-      }
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
-  }
+      return {
+        project: []
+      };
+    },
+    created() {
+      axios.get('./api/project').then((res) => {
+          var response = res.data;
+          if (response.errno === ERR_OK) {
+            this.project = response.data;
+            console.log(this.project);
+          }
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
 };
 </script>

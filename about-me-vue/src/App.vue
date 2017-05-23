@@ -22,9 +22,13 @@
         </router-link>
       </ul>
     </div>
-    <!-- 路由出口 -->
-    <router-view :head="head"></router-view>
-    <!-- keep-alive 状态保留，生命周期不会重新加载 -->
+
+    <div class="container">
+      <transition :name="transitionName">
+        <router-view :head="head"></router-view>
+      </transition>
+    </div>
+
   </div>
 </template>
 <script>
@@ -50,12 +54,16 @@ export default {
           console.log(error);
         });
     }
+
 };
 </script>
 <style lang="scss" scoped>
 @import 'common/style/mixin.scss';
 // 通过给父元素设定高度缺省值，其子元素就能达到撑满页面的效果
 #app {
+  @include wh;
+}
+.container {
   @include wh;
 }
 

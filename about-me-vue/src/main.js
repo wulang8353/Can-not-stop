@@ -18,9 +18,11 @@ const routes = [{
     redirect: '/index'
 }, {
     path: '/index',
+    name: 'index',
     component: index
 }, {
     path: '/project',
+    name: 'project',
     component: project
 }];
 

@@ -3,9 +3,12 @@
     <img class="bg1" :src="img"></img>
     <div class="mouse-tips"></div>
     <div class="bg-black">
-      <div class="title1" >
+      <div class="title1">
         <h2 class="name">{{head.nickname}}</h2>
-        <p>{{head.saying}}</p>
+        <div>
+          <p class="saying1 animated fadeInLeft">{{head.saying1}}</p>
+          <p class="saying2 animated fadeInRight">{{head.saying2}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -22,18 +25,22 @@ export default {
       img: require('./head.png')
     };
   },
-  methods: {
+  methods: {},
+  transitions: {
+    bounce: {
+      enterClass: 'bounceInLeft',
+      leaveClass: 'bounceOutRight'
+    }
   }
 };
 </script>
 <style lang="scss" scoped>
 @import '../../common/style/mixin.scss';
 .page1 {
+  @include wh;
   text-align: center;
   overflow: hidden;
   position: relative;
-  @include wh;
-  transition: all 0.5s ease;
   .bg1 {
     display: block;
     @include wh;
@@ -54,6 +61,15 @@ export default {
     color: #fff;
     > h2 {
       font-size: 40px;
+    }
+    .saying1 {
+      animation-delay: 0.5s;
+      display: inline-block;
+      margin-right: 30px;
+    }
+    .saying2 {
+      animation-delay: 2.0s;
+      display: inline-block;
     }
   }
 }
