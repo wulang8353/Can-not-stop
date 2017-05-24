@@ -24,7 +24,7 @@
     </div>
 
     <div class="container">
-      <transition :name="transitionName">
+      <transition >
         <router-view :head="head"></router-view>
       </transition>
     </div>

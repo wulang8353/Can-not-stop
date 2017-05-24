@@ -68,7 +68,7 @@ export default {
       margin-right: 30px;
     }
     .saying2 {
-      animation-delay: 2.0s;
+      animation-delay: 1.5s;
       display: inline-block;
     }
   }

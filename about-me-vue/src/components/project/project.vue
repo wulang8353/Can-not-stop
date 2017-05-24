@@ -2,7 +2,7 @@
   <div class="page2">
     <h2 class="title2">项目经验</h2>
     <div class="content">
-      <div class="project animated " :class="'pro'+(index+1)" v-for="(item,index) in project.experience">
+      <div class="project" :class="'pro'+(index+1)" v-for="(item,index) in project.experience">
         <div class="pro-img">
           <div class="iconfont" :class="item.logo"></div>
         </div>
@@ -44,6 +44,7 @@
     box-shadow: 1px 3px 3px 0 #b9b9b9;
     border-radius: 2px;
     cursor: pointer;
+    opacity: 0;
     box-sizing: border-box;
     padding: 5px;
     .pro-img {
@@ -83,15 +84,37 @@
       }
     }
     @for $i from 1 through 2 {
+      //  计算时候用 $i表示变量，而非#{$i}
       &.pro#{$i} {
         @if $i%2==1 {
           float: left;
           margin-right: 50%;
+          animation: fadeInLeft 0.8s ease both;
         }
         @else {
           float: right;
           margin-left: 50%;
+          animation: fadeInRight  0.8s ease both;
         }
+        animation-delay: .5s * ($i - 1);
+      }
+    }
+    @keyframes fadeInLeft {
+      0% {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+      }
+      100% {
+        opacity: 1;
       }
     }
   }
