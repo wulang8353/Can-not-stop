@@ -1,19 +1,20 @@
 <template>
   <div class="page1 on">
     <img class="bg1" :src="img"></img>
-    <div class="mouse-tips"></div>
     <div class="bg-black">
       <div class="title1">
         <h2 class="name">{{head.nickname}}</h2>
         <div>
-          <p class="saying1 animated fadeInLeft">{{head.saying1}}</p>
-          <p class="saying2 animated fadeInRight">{{head.saying2}}</p>
+          <p class="saying1 animated rotateInDownLeft">{{head.saying1}}</p>
+          <p class="saying2 animated rotateInDownRight">{{head.saying2}}</p>
         </div>
       </div>
     </div>
+    <mouse></mouse>
   </div>
 </template>
 <script>
+import mouse from '../mouse/mouse.vue';
 export default {
   props: {
     head: {
@@ -26,11 +27,8 @@ export default {
     };
   },
   methods: {},
-  transitions: {
-    bounce: {
-      enterClass: 'bounceInLeft',
-      leaveClass: 'bounceOutRight'
-    }
+  components: {
+    mouse
   }
 };
 </script>

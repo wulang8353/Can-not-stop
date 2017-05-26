@@ -39,7 +39,7 @@ const ERR_OK = 0;
 export default {
   data() {
       return {
-        head: []
+        head: {}
       };
     },
     created() {
