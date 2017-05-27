@@ -11,7 +11,7 @@
         <router-link to="/skill"  tag="li" class="item iconfont icon-skill">
           <span>技能</span>
         </router-link>
-        <router-link to="/experice" tag="li" class="item iconfont icon-chengchangjingli">
+        <router-link to="/experience" tag="li" class="item iconfont icon-chengchangjingli">
           <span>经历</span>
         </router-link>
         <router-link to="/contact" tag="li" class="item iconfont icon-lianxi">

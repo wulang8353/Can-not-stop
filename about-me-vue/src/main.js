@@ -9,6 +9,7 @@ import 'common/style/index.scss';
 import index from 'components/index/index';
 import project from 'components/project/project';
 import skill from 'components/skill/skill';
+import experience from 'components/experience/experience';
 // 2.全局注册且调用模块
 Vue.use(VueRouter);
 
@@ -28,6 +29,10 @@ const routes = [{
     path: '/skill',
     name: 'skill',
     component: skill
+}, {
+    path: '/experience',
+    name: 'experience',
+    component: experience
 }];
 
 // 4.创建router实例，并传入映射配置

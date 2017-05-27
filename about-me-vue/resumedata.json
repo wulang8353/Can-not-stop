@@ -23,31 +23,50 @@
     "github":"https://github.com/wulang8353",
     "gitbook":"https://wulang8353.gitbooks.io/demacial/content/"
   },
-  "workExperience":{
-    "time":"2016-10 至 今",
-    "experience":[
-      {
-        "name":"网页游戏bong精灵",
-        "skill":"gulp+scss+zepto",
-        "time":"",
-        "describe":[
-          "bong精灵可以根据用户消耗的卡路里换取食物进行喂养,有食物商店,宠物商店,宠物PK,精灵分享等",
-          "使用gulp构建项目,实现浏览器热刷新,js、css压缩合并,图片压缩处理等项目自动打包处理",
-          "使用flexible.js实现移动端屏幕适配问题"
-        ]
-      },
-      {
-        "name":"微信公众号活动页",
-        "skill":"vue.js+vue-route+nodeJs",
-        "time":"",
-        "describe":[
-          "基于微信公众号的网页活动,实现用户活动分享,用户活动查看好友记录等",
-          "使用vue框架完成项目前端开发,使用nodeJs完成项目后端开发",
-          "项目服务器部署,项目后期维护和运维"
-        ]
-      }
-    ]
-  },
+  "experience":[
+    {
+      "date":"EXP1",
+      "intros":[
+        "少不更事",
+        "2011.9 - 2015.6",
+        "本科"
+      ],
+      "items": [
+        "通宵打LOL",
+        "谈恋爱与被甩",
+        "业余播音员",
+        "酒量硬是没有锻炼出来"
+      ]
+    },
+    {
+      "date":"EXP2",
+      "intros":[
+        "大观园",
+        "2015.9 - 2016.9",
+        "研一"
+      ],
+      "items": [
+        "研会副主席",
+        "迎新晚会颜值主持人",
+        "省内各种出差",
+        "实验室春日宴"
+      ]
+    },
+    {
+      "date":"EXP3",
+      "intros":[
+        "进击的小白",
+        "2016.10 - 至今",
+        "研二"
+      ],
+      "items": [
+        "导师日常事务重点关注对象",
+        "前端知识汇总尝试",
+        "各种Demo仿写融合",
+        "健身增肌ing"
+      ]
+    }
+  ],
   "projectExperience":{
     "time":"",
     "experience":[
@@ -57,8 +76,8 @@
         "time":"2017.3",
         "logo": "icon-chengchangjingli",
         "describe":
-          "网页上使用鼠标进行拖拽，进行实物选择、添加购物车、结算等功能"
-        ,
+        "网页上使用鼠标进行拖拽，进行实物选择、添加购物车、结算等功能"
+      ,
         "address": "https://github.com/wulang8353/vue2",
         "summary": "https://github.com/wulang8353/vue2/blob/master/README.md"
       },
@@ -68,8 +87,8 @@
         "time":"2017.4",
         "logo": "icon-xiangmu",
         "describe":
-          "基于NodeJs构建数据库，实现前后可以交互的博客功能"
-        ,
+        "基于NodeJs构建数据库，实现前后可以交互的博客功能"
+      ,
         "address": "https://github.com/wulang8353/Node-Blog",
         "summary": "https://github.com/wulang8353/Node-Blog/blob/master/README.md"
       }
@@ -88,45 +107,45 @@
     },
     {
       "title":"基本掌握",
-       "items":[
+      "items":[
         "Es6",
         "jQuery",
         "Bootstrap",
         "Node",
         "zepto"
       ],
-      "backface": "熟悉原生js、jquery、zepto等框架及相关插件，常见的动画、交互基本能实现。拥有了良好的代码书写规范，注释清晰，简洁易读，对mvc、mvvm框架，commomjs规范，模块化，以及es6有一定的了解"    
+      "backface": "熟悉原生js、jquery、zepto等框架及相关插件，常见的动画、交互基本能实现。拥有了良好的代码书写规范，注释清晰，简洁易读，对mvc、mvvm框架，commomjs规范，模块化，以及es6有一定的了解"
     },
     {
       "title":"基本应用",
-       "items":[
+      "items":[
         "Vue.js",
         "Webpack",
         "Npm",
         "eslint"
       ],
-      "backface": "学习过vue、webpack，能够基本运用，使用vue写了一些demo，学会了使用webpack作为构建工具，eslint规范格式，npm进行包管理"   
+      "backface": "学习过vue、webpack，能够基本运用，使用vue写了一些demo，学会了使用webpack作为构建工具，eslint规范格式，npm进行包管理"
     },
     {
       "title":"开发工具",
-       "items":[
+      "items":[
         "SublimeText",
         "Koala",
         "Fiddler",
         "Git",
         "Chrome"
       ],
-      "backface": " 常用的编辑器是微软的SublimeText；能熟练运用Chrome断点调试debug；koala用来编译scss，压缩js，自动添加prefix；Fiddler用来抓包；使用git命令配合github等代码库进行版本控制"   
+      "backface": " 常用的编辑器是微软的SublimeText；能熟练运用Chrome断点调试debug；koala用来编译scss，压缩js，自动添加prefix；Fiddler用来抓包；使用git命令配合github等代码库进行版本控制"
     },
     {
       "title":"常用插件",
-       "items":[
+      "items":[
         "Animate.css",
         "HighChart",
         "Swiper",
         "Element"
       ],
-      "backface": "swiper：顺滑的轮播及滑动；Animate.css控制复杂动画；HighChart挺不错的图标工具；Element基于Vue的ui框架"   
+      "backface": "swiper：顺滑的轮播及滑动；Animate.css控制复杂动画；HighChart挺不错的图标工具；Element基于Vue的ui框架"
     }
   ],
   "selfAssessment":[
