@@ -1,34 +1,32 @@
 <template>
   <div id="app" ref="doc">
     <div class="nav-right">
-      <ul>
-        <router-link to="/index">
-          <li class="item iconfont icon-homepage on"><span>首页</span></li>
+      <ul class="tab-item">
+        <router-link to="/index" tag="li" class="item iconfont icon-homepage">
+          <span>首页</span>
         </router-link>
-        <router-link to="/project">
-          <li class="item iconfont icon-xiangmu"><span>项目</span></li>
+        <router-link to="/project"  tag="li" class="item iconfont icon-xiangmu">
+          <span>项目</span>
         </router-link>
-        <router-link to="/skill">
-          <li class="item iconfont icon-skill"><span>技能</span></li>
+        <router-link to="/skill"  tag="li" class="item iconfont icon-skill">
+          <span>技能</span>
         </router-link>
-        <router-link to="/experice">
-          <li class="item iconfont icon-chengchangjingli"><span>经历</span></li>
+        <router-link to="/experice" tag="li" class="item iconfont icon-chengchangjingli">
+          <span>经历</span>
         </router-link>
-        <router-link to="/contact">
-          <li class="item iconfont icon-lianxi"><span>联系</span></li>
+        <router-link to="/contact" tag="li" class="item iconfont icon-lianxi">
+          <span>联系</span>
         </router-link>
-        <router-link to="/info">
-          <li class="item iconfont icon-editor"><span>信息</span></li>
+        <router-link to="/info" tag="li" class="item iconfont icon-editor">
+          <span>信息</span>
         </router-link>
       </ul>
     </div>
-
     <div class="container">
-      <transition >
+      <transition>
         <router-view :head="head"></router-view>
       </transition>
     </div>
-
   </div>
 </template>
 <script>
@@ -47,14 +45,13 @@ export default {
           var response = res.data;
           if (response.errno === ERR_OK) {
             this.head = response.data;
-            console.log(this.head);
+            // console.log(this.head);
           }
         })
         .catch(function(error) {
           console.log(error);
         });
     }
-
 };
 </script>
 <style lang="scss" scoped>
@@ -63,6 +60,7 @@ export default {
 #app {
   @include wh;
 }
+
 .container {
   @include wh;
 }
@@ -75,6 +73,16 @@ $nrH: 348px;
   top: 50%;
   right: 3%;
   margin-top: - $nrH/2;
+  .tab-item {
+    & >  li {
+      &.on {
+        background: #fec02d;
+        color: #000;
+        transform: scale(1.3);
+        margin: 20px 0;
+      }
+    }
+  }
   .item {
     @include wh(50px, 50px);
     margin: 10px 0;

@@ -25,6 +25,8 @@ var app = express()
 var appData = require('../resumedata.json');
 var head = appData.head;
 var project = appData.projectExperience;
+var skill = appData.skill;
+
 
 var apiRoutes = express.Router();
 
@@ -39,6 +41,13 @@ apiRoutes.get('/project',function (req, res) {
   res.json({
     errno: 0,
     data: project
+  });
+});
+
+apiRoutes.get('/skill',function (req, res) {
+  res.json({
+    errno: 0,
+    data: skill
   });
 });
 

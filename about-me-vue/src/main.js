@@ -8,7 +8,7 @@ import 'common/style/index.scss';
 // 1.引入路由组件
 import index from 'components/index/index';
 import project from 'components/project/project';
-
+import skill from 'components/skill/skill';
 // 2.全局注册且调用模块
 Vue.use(VueRouter);
 
@@ -24,10 +24,15 @@ const routes = [{
     path: '/project',
     name: 'project',
     component: project
+}, {
+    path: '/skill',
+    name: 'skill',
+    component: skill
 }];
 
 // 4.创建router实例，并传入映射配置
 const router = new VueRouter({
+    linkActiveClass: 'on',
     routes // （缩写）相当于 routes: routes
 });
 

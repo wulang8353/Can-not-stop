@@ -3,15 +3,15 @@
     "name":"吴浪",
     "nickname": "Walter",
     "intention":"前端开发",
-    "tel":"15712345678",
-    "email":"zengtianshengz@163.com",
-    "address":"杭州余杭",
-    "age":"1992.9.25",
+    "tel":"18072940985",
+    "email":"284823698@qq.com",
+    "address":"杭州西湖区",
+    "age":"1993.6.9",
     "sex":"男",
-    "school":"华侨大学厦门工学院",
-    "graduation":"本科",
-    "graduationTime":"2012-9-1 至 2016-7-1",
-    "major":"电子信息工程及自动化",
+    "school":"浙江工业大学",
+    "graduation":"研究生",
+    "graduationTime":"2015-9 至 2017-12",
+    "major":"控制工程",
     "saying1":"读书是为了心平气和地跟傻逼说话",
     "saying2": "健身是为了傻逼心平气和地跟我说话",
     "interest":"骑行、游泳、编程、音乐、攀岩",
@@ -20,8 +20,8 @@
 
   },
   "blogLink":{
-    "github":"https://github.com/ZengTianShengZ",
-    "blog":"https://segmentfault.com/u/zss"
+    "github":"https://github.com/wulang8353",
+    "gitbook":"https://wulang8353.gitbooks.io/demacial/content/"
   },
   "workExperience":{
     "time":"2016-10 至 今",
@@ -77,33 +77,61 @@
   },
   "skill":[
     {
-      "type":"构建工具",
-      "describe":[
-        "熟练使用gulp,webpack构建项目"
-      ]
+      "title":"熟练掌握",
+      "items":[
+        "HTML(5)",
+        "CSS(3)",
+        "JavaScript",
+        "Sass"
+      ],
+      "backface": "能熟练使用photoshop完成基本的图像处理，用html和css还原设计稿。各种居中、浮动、定位都调教过，熟悉移动端多尺寸适配以及响应式布局，能运用scss预处理css"
     },
     {
-      "type":"框架",
-      "describe":[
-        "熟悉 jQuery,Bootstrap",
-        "熟练使用vue完成复杂交互的开发",
-        "了解react"
-      ]
+      "title":"基本掌握",
+       "items":[
+        "Es6",
+        "jQuery",
+        "Bootstrap",
+        "Node",
+        "zepto"
+      ],
+      "backface": "熟悉原生js、jquery、zepto等框架及相关插件，常见的动画、交互基本能实现。拥有了良好的代码书写规范，注释清晰，简洁易读，对mvc、mvvm框架，commomjs规范，模块化，以及es6有一定的了解"    
     },
     {
-      "type":"-",
-      "describe":[
-        "熟悉 js,能使用原生js完成一般项目的开发",
-        "熟悉css,scss,以及css3的以下新特性",
-        "熟悉 html5,能写出语义化网页",
-        "熟悉网页优化",
-        "了解网络安全,懂得项目运维"
-      ]
+      "title":"基本应用",
+       "items":[
+        "Vue.js",
+        "Webpack",
+        "Npm",
+        "eslint"
+      ],
+      "backface": "学习过vue、webpack，能够基本运用，使用vue写了一些demo，学会了使用webpack作为构建工具，eslint规范格式，npm进行包管理"   
+    },
+    {
+      "title":"开发工具",
+       "items":[
+        "SublimeText",
+        "Koala",
+        "Fiddler",
+        "Git",
+        "Chrome"
+      ],
+      "backface": " 常用的编辑器是微软的SublimeText；能熟练运用Chrome断点调试debug；koala用来编译scss，压缩js，自动添加prefix；Fiddler用来抓包；使用git命令配合github等代码库进行版本控制"   
+    },
+    {
+      "title":"常用插件",
+       "items":[
+        "Animate.css",
+        "HighChart",
+        "Swiper",
+        "Element"
+      ],
+      "backface": "swiper：顺滑的轮播及滑动；Animate.css控制复杂动画；HighChart挺不错的图标工具；Element基于Vue的ui框架"   
     }
   ],
   "selfAssessment":[
-    "   鲁迅先生曾说过:世上本没有路,走的人多了便成了路",
-    "每错,点击左上角,欢迎 star "
+    "同学，你好！",
+    "点击左上角,欢迎 star "
   ]
 
 }
