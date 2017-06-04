@@ -23,7 +23,7 @@
       </ul>
     </div>
     <div class="container">
-      <transition>
+      <transition enter-active-class="animated hinge" leave-acitve-class="animated fadeOutRight" >
         <router-view :head="head"></router-view>
       </transition>
     </div>
@@ -56,6 +56,8 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import 'common/style/mixin.scss';
+$nrH: 348px;
+
 // 通过给父元素设定高度缺省值，其子元素就能达到撑满页面的效果
 #app {
   @include wh;
@@ -63,9 +65,16 @@ export default {
 
 .container {
   @include wh;
+  .fade-enter-active, .fade-leave-active {
+    transition: all 0.5s
+  }
+  .fade-enter, .fade-leave-active {
+    opacity: 0;
+    transform: translateY(100%)
+  }
 }
 
-$nrH: 348px;
+
 .nav-right {
   z-index: 50;
   height: $nrH;
