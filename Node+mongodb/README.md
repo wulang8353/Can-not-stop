@@ -14,4 +14,9 @@
 * 前端：jquery + bootstap + bower
 * 后端: express+MongoDB + mongoose + 模板引擎jade + 时间格式化工具moment.js
 * Grunt
+
+## 技术简介
 * jade: 实现继承+ 公共区块的复用
+* bower 它帮我们解决了包与包直接的依赖关系
+下载一个包A的时候,由于它依赖包B,所以bower会自动下载好包B;需要通过bower init建立bower.json以及bowerrc(模块存储路径)，如果没有在环境变量中定义git，最好不要在cmd而是在git bash中安装模块
+
