@@ -23,9 +23,9 @@
       </ul>
     </div>
     <div class="container">
-      <transition enter-active-class="animated hinge" leave-acitve-class="animated fadeOutRight" >
+      <!-- <transition enter-active-class="animated hinge" leave-acitve-class="animated fadeOutRight" > -->
         <router-view :head="head"></router-view>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>

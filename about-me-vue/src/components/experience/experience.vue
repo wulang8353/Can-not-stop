@@ -24,17 +24,17 @@ export default {
         cur: ''
       };
     },
-    created() {
-      axios.get('./api/experience').then((res) => {
-          var response = res.data;
-          if (response.errno === ERR_OK) {
-            this.experiences = response.data;
-          }
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-    }
+  created() {
+    axios.get('./api/experience').then((res) => {
+        var response = res.data;
+        if (response.errno === ERR_OK) {
+          this.experiences = response.data;
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 };
 
 
