@@ -1,4 +1,5 @@
 {
+  // 二进制数值开头 0b/b/B
   console.log('B',0B111110111);
   console.log(0o767);
 }
@@ -26,6 +27,7 @@
 }
 
 {
+  //  直接取整数
   console.log(4.1,Math.trunc(4.1));
   console.log(4.9,Math.trunc(4.9));
 }
