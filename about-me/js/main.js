@@ -49,7 +49,7 @@ var doFn = {
         };
 
 
-        $('.info-tg, .info-tg2').on('click', function(event) {
+        $('.info-tg, .info-tg2, .info-tg3').on('click', function(event) {
             event.stopPropagation();
             event.preventDefault();
 
@@ -114,7 +114,7 @@ var doFn = {
             infoToggle();
 
 
-            // 第四屏幕-先动画再绑定事件 
+            // 第四屏幕-先动画再绑定事件
             if (onIndex === 3) {
                 if (!p4Animate) {
                     return;
