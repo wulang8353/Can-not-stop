@@ -12,6 +12,7 @@
         font-size: 12px;
         font-family: "微软雅黑";
     }
+    /*登录浮层*/
 
     .ui-dialog {
         width: 380px;
@@ -23,6 +24,7 @@
         border: 1px solid #d5d5d5;
         background-color: #fff;
     }
+    /*标题栏区域*/
 
     .ui-dialog-title {
         height: 48px;
@@ -35,9 +37,12 @@
         border-bottom: 1px solid #efefef;
         cursor: move;
         padding: 0px 20px;
+        user-select: none;
+        /*文字不能被选中*/
     }
+    /*关闭按钮设置*/
 
-    .ui-dialog-title-closebutton {
+    .ui-dialog-closebutton {
         width: 16px;
         height: 16px;
         display: block;
@@ -47,12 +52,65 @@
         background: url(./images/close_def.png);
     }
 
-    .ui-dialog-title-closebutton:hover {
+    .ui-dialog-closebutton:hover {
         background: url(./images/close_hov.png);
     }
+    /*内容区域*/
 
     .ui-dialog-content {
         padding: 15px 20px;
+    }
+    /*每行元素可能需要的样式*/
+
+    .ui-dialog-top {
+        padding-top: 15px;
+    }
+
+    .ui-dialog-center {
+        height: 40px;
+        line-height: 40px;
+        text-align: right;
+    }
+    /*输入框公用的样式*/
+
+    .ui-dialog-input {
+        width: 100%;
+        height: 40px;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid #d5d5d5;
+        font-size: 16px;
+        color: #c1c1c1;
+        text-indent: 25px;
+        outline: none;
+    }
+    /*两个输入框的icon设置*/
+
+    .ui-dialog-input-username {
+        background: url(images/input_username.png) no-repeat 2px;
+    }
+
+    .ui-dialog-input-password {
+        background: url(images/input_password.png) no-repeat 2px;
+    }
+    /*提交按钮的样式*/
+
+    .ui-dialog-submit {
+        width: 100%;
+        height: 50px;
+        background: #3b7ae3;
+        border: none;
+        font-size: 16px;
+        color: #fff;
+        outline: none;
+        text-decoration: none;
+        display: block;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .ui-dialog-submit:hover {
+        background: #3f81b0;
     }
 
     .ui-mask {
@@ -65,42 +123,71 @@
         z-index: 8000;
         opacity: 0.4;
         filter: Alpha(opacity=40);
+        display: none;
     }
-    .link{
-      text-align: right;
-      line-height: 20px;
-      padding-right: 40px;
+
+    .link {
+        text-align: right;
+        line-height: 20px;
+        padding-right: 40px;
     }
     </style>
 </head>
 
 <body>
-    <div class="ui-dialog" id="dialog">
-        <div class="ui-dialog-title" id="dialog-title">
+    <div class="ui-dialog" id="dialog" onselectstart="return false">
+        <div class="ui-dialog-title" id="dialog-title" onselectstart="return false">
             登陆通行证
-            <a href="javascript:;" class="ui-dialog-title-closebutton"></a>
+            <a class="ui-dialog-closebutton" href="javascript:hideDialog();"></a>
         </div>
-        <div class="ui--dialog-centent">
+        <!-- 主要内容区域 -->
+        <div class="ui-dialog-content">
+            <!-- 两个输入框 -->
+            <div class="ui-dialog-center ui-dialog-top">
+                <input class="ui-dialog-input ui-dialog-input-username" type="input" value="手机/邮箱/用户名" />
+            </div>
+            <div class="ui-dialog-center ui-dialog-top">
+                <input class="ui-dialog-input ui-dialog-input-password" type="input" value="密码" />
+            </div>
+            <div class="ui-dialog-center">
+                <a href="#">忘记密码</a>
+            </div>
+            <!-- 登录按钮 -->
+            <div>
+                <a class="ui-dialog-submit" href="#">登录</a>
+            </div>
+            <!-- 注册按钮 -->
+            <div class="ui-dialog-center">
+                <a href="#">立即注册</a>
+            </div>
         </div>
     </div>
     <div class="ui-mask" id="mask" onselectstart="return false"></div>
     <div class="link">
         <a href="javascript:showDialog;">登录</a>
     </div>
-
-
     <script type="text/javascript">
-
-
     //  获取元素对象
-    function g(id){return document.getElementById(id);}
+    function g(id) {
+        return document.getElementById(id);
+    }
 
     // 自动居中 - 登录浮层 (el -element)
-    function autoCenter (el) {
-      var bodyW =document.documentElement.clientWidth;
-      var bodyW =document.documentElement.clientHeight;
+    function autoCenter(el) {
+        var bodyW = document.documentElement.clientWidth;
+        var bodyW = document.documentElement.clientHeight;
+
+        var elW = el.offsetWidth;
+        var elH = el.offsetHeight;
+
+        el.style.left = (bodyW - elW) / 2 + 'px';
+        el.style.top = (bodyH - elH) / 2 + 'px';
     }
-    // 自动全屏 - 遮罩
+    // 自动全屏 - 遮罩  传入的元素对象的宽和高设置位当前可视区域的宽和高
+    function fillToBody(el) {
+        el.style.width = document.documentElement.clientWidth + 'px';
+        el.style.height = document.documentElement.clientHeight + 'px';
+    }
     </script>
 </body>
 
