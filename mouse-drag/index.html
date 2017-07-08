@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽效果</title>
+    <style type="text/css">
+    body {
+        background: url(images/baidu_demo.png) no-repeat top center #fff;
+        padding: 0px;
+        margin: 0px;
+        font-size: 12px;
+        font-family: "微软雅黑";
+    }
+
+    .ui-dialog {
+        width: 380px;
+        height: auto;
+        position: absolute;
+        z-index: 9000;
+        top: 100px;
+        left: 100px;
+        border: 1px solid #d5d5d5;
+        background-color: #fff;
+    }
+
+    .ui-dialog-title {
+        height: 48px;
+        line-height: 48px;
+        /*文字居中  设置高度等于行高 ->在这一行文字当中只有一行内容，且占据整个元素的高，就是垂直居中 */
+        top: 100px;
+        left: 100px;
+        font-size: 16px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #efefef;
+        cursor: move;
+        padding: 0px 20px;
+    }
+
+    .ui-dialog-title-closebutton {
+        width: 16px;
+        height: 16px;
+        display: block;
+        position: absolute;
+        top: 12px;
+        right: 20px;
+        background: url(./images/close_def.png);
+    }
+
+    .ui-dialog-title-closebutton:hover {
+        background: url(./images/close_hov.png);
+    }
+
+    .ui-dialog-content {
+        padding: 15px 20px;
+    }
+
+    .ui-mask {
+        width: 100%;
+        height: 100%;
+        background: #000;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 8000;
+        opacity: 0.4;
+        filter: Alpha(opacity=40);
+    }
+    .link{
+      text-align: right;
+      line-height: 20px;
+      padding-right: 40px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="ui-dialog" id="dialog">
+        <div class="ui-dialog-title" id="dialog-title">
+            登陆通行证
+            <a href="javascript:;" class="ui-dialog-title-closebutton"></a>
+        </div>
+        <div class="ui--dialog-centent">
+        </div>
+    </div>
+    <div class="ui-mask" id="mask" onselectstart="return false"></div>
+    <div class="link">
+        <a href="javascript:showDialog;">登录</a>
+    </div>
+
+
+    <script type="text/javascript">
+
+
+    //  获取元素对象
+    function g(id){return document.getElementById(id);}
+
+    // 自动居中 - 登录浮层 (el -element)
+    function autoCenter (el) {
+      var bodyW =document.documentElement.clientWidth;
+      var bodyW =document.documentElement.clientHeight;
+    }
+    // 自动全屏 - 遮罩
+    </script>
+</body>
+
+</html>
