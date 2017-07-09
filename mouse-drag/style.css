@@ -1,0 +1,156 @@
+body {
+    background: url(images/baidu_demo.png) no-repeat top center #fff;
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    font-family: "微软雅黑";
+}
+
+
+/*登录浮层*/
+
+.ui-dialog {
+    width: 380px;
+    height: auto;
+    position: absolute;
+    z-index: 9000;
+    top: 100px;
+    left: 100px;
+    border: 1px solid #d5d5d5;
+    background-color: #fff;
+    display: none;
+}
+
+
+/*标题栏区域*/
+
+.ui-dialog-title {
+    height: 48px;
+    line-height: 48px;
+    /*文字居中  设置高度等于行高 ->在这一行文字当中只有一行内容，且占据整个元素的高，就是垂直居中 */
+    top: 100px;
+    left: 100px;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #efefef;
+    cursor: move;
+    padding: 0px 20px;
+    user-select: none;
+    /*文字不能被选中*/
+}
+
+
+/*关闭按钮设置*/
+
+.ui-dialog-closebutton {
+    width: 16px;
+    height: 16px;
+    display: block;
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    background: url(./images/close_def.png);
+}
+
+.ui-dialog-closebutton:hover {
+    background: url(./images/close_hov.png);
+}
+
+
+/*内容区域*/
+
+.ui-dialog-content {
+    padding: 15px 20px;
+}
+
+
+/*每行元素的样式*/
+
+.ui-dialog-top {
+    padding-top: 15px;
+}
+
+.ui-dialog-center {
+    height: 40px;
+    line-height: 40px;
+    text-align: right;
+}
+
+.ui-dialog-center a {
+    text-decoration: none
+}
+
+
+/*输入框公用的样式*/
+
+.ui-dialog-input {
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #d5d5d5;
+    font-size: 16px;
+    color: #c1c1c1;
+    text-indent: 25px;
+    outline: none;
+}
+
+
+/*两个输入框的icon设置*/
+
+.ui-dialog-input-username {
+    background: url(images/input_username.png) no-repeat 2px;
+}
+
+.ui-dialog-input-password {
+    background: url(images/input_password.png) no-repeat 2px;
+}
+
+
+/*提交按钮的样式*/
+
+.ui-dialog-submit {
+    width: 100%;
+    height: 50px;
+    background: #3b7ae3;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    line-height: 50px;
+}
+
+.ui-dialog-submit:hover {
+    background: #3f81b0;
+}
+
+.ui-mask {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 8000;
+    opacity: 0.4;
+    filter: Alpha(opacity=40);
+    display: none;
+}
+
+
+.link a{
+    font-weight: normal;
+    float: right;
+    color: red;
+    line-height: 24px;
+    margin-right: 202px;
+    font-size: 18px;
+    margin-top: 30px;
+    text-decoration: underline;
+}
+.link a:hover{
+    color: #00c;
+}
